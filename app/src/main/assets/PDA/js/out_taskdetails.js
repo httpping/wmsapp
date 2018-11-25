@@ -4,7 +4,7 @@ $(function () {
     layer.open({
         type: 2, content: '正在检查任务系统'
     });
-    setTimeout(function () { gettasklist(); }, 1000);
+    setTimeout(function () { gettasklist(); },200);
 
 
     if (getUrlParam("tid") != null && getUrlParam("tid") != "") {
@@ -55,9 +55,16 @@ function gettasklist() {
                                     nhtml += "                        <span>" + (zitem.IsFj == "1" ? "<span style='color:red'>是</span>" : "<span style='color:#0D74AE'>否</span>") + "</span>";
                                     nhtml += "                    </p>";
                                     nhtml += "                    <p class=\'list_data\'>";
-                                    nhtml += "                        <span>入库数量：</span>";
+                                    nhtml += "                        <span>需出库数量：</span>";
                                     nhtml += "                        <span>" + zitem.Quanlity + "</span>";
                                     nhtml += "                    </p>";
+									if(zitem.outhourseNum!=null && zitem.outhourseNum!="")
+									{
+										nhtml += "                    <p class=\'list_data\'>";
+										nhtml += "                        <span>已出库数量：</span>";
+										nhtml += "                        <span>" + zitem.outhourseNum + "</span>";
+										nhtml += "                    </p>";
+									}
                                     nhtml += "                </div>";
                                     nhtml += "            </li>";
                                 });

@@ -212,7 +212,15 @@ function add() {
 
         //重新写入文件
         console.info("===>最后的文件是:" + JSON.stringify(data));
-        //重新写入后弹出入库成功，返回到主页
+        var isresult = writefile("inhouseplan.json", JSON.stringify(data));
+        if (isresult == "success") {
+            layer.closeAll();
+            layer.open({
+                content: '操作成功'
+            , btn: '确认'
+            , yes: function (index) { window.location.href = "tasklist.html" }
+            });
+        }
     }
 }
 

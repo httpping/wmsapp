@@ -2,7 +2,12 @@ $(function(){
 	layer.open({
 		type: 2,content: '正在检查任务系统'
 	});
-	setTimeout(function () {gettasklist();}, 1000);
+	setTimeout(function () {gettasklist();}, 200);
+	
+	
+	$(".startinhouse").click(function(){
+		window.location.href="inhouse.html";
+	})
 });
 
 function gettasklist(){

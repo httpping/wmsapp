@@ -10,7 +10,7 @@ $(function () {
     $(".startinhouse").click(function () {
         window.location.href = "inhouse.html?tid=" + tid;
     });
-    setTimeout(function () { gettasklist(); }, 1000);
+    setTimeout(function () { gettasklist(); },200);
 });
 
 function gettasklist() {

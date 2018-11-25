@@ -10,7 +10,7 @@ $(function () {
     $(".startinhouse").click(function () {
         window.location.href = "outhouse.html?tid=" + tid;
     });
-    setTimeout(function () { gettasklist(); }, 1000);
+    setTimeout(function () { gettasklist(); }, 200);
 
 
     $("#txttpcode").keydown(function (event) {
@@ -66,7 +66,9 @@ function gettasklist() {
 }
 
 function ckurl(obj) {
-    window.location.href = "editouthouse.html?tid=" + $(obj).attr("data-tid-value") + "&tpcode=" + $(obj).attr("data-tpcode-value");
+    //window.location.href = "editouthouse.html?tid=" + $(obj).attr("data-tid-value") + "&tpcode=" + $(obj).attr("data-tpcode-value");
+	
+	window.location.href = "out_taskdetails.html?tid=" + $(obj).attr("data-tid-value") + "&tpcode=" + $(obj).attr("data-tpcode-value");
 }
 function gourl(tid) {
 
