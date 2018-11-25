@@ -64,7 +64,8 @@ public class WebViewActivity extends BaseBrowserActivity  {
 
 //        webView.loadUrl("https://www.baidu.com/");
 
-        webView.loadUrl("file:///android_asset/test.html");
+//        webView.loadUrl("file:///android_asset/test.html");
+        webView.loadUrl("file:///android_asset/PDA/login.html");
 
 
 //        String path = getSDcardRootPath();

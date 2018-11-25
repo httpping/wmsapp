@@ -126,7 +126,7 @@ public class FileOptions {
             String content = "";
             while (true) {
                String line = bw.readLine();
-               if (StringUtil.isNotEmpty(line)){
+               if (line!=null){
                    content +=line;
                }else {
                    break;

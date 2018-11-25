@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>日常入库组盘</title>
+    <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" name="viewport"/>
+    <meta content="yes" name="apple-mobile-web-app-capable"/>
+    <meta content="black" name="apple-mobile-web-app-status-bar-style"/>
+    <meta content="telephone=no" name="format-detection"/>
+    <link href="css/style.css" rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" href="css/inhouse.css">
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/common.js?v=1"></script>
+	<script type="text/javascript" src="js/layer.js"></script>	
+	<script>document.write('<script src="js/inhouse.js?t='+new Date().getTime()+'" type="text/javascript" charset="utf-8"><\/script>');</script>
+    <style>
+        .footer{
+            text-align: left;
+        }.layui-m-layer2 .layui-m-layercont p{
+            color: white;
+            font-size: 15px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+
+<body>
+<!---头部 开始 --->
+<div class="public-nav">
+    <div class="bw">
+        <a href="javascript:history.go(-1)" class="l"><i class="goback"></i></a>
+        <div class="name">组盘</div>
+        <a href="home.html" class="r home_box"><i class="icon-ee0b back_home"></i></a>
+    </div>
+</div>
+<div class="h-height"></div>
+<!---头部 结束 --->
+<div class="index-main">
+    <!--soso-->
+    <div class="search-bar" > <!--margin:70px auto 10px auto-->
+        <div class="soso">
+                <div class="input-content flex-cont flex-search">
+                    <img src="images/unbounded_icon_search.png" alt="">
+                    <div class="input">
+                        <input type="search" id="txttpcode" placeholder="请扫描托盘条码" required="">
+                    </div>
+                </div>
+            </div>
+    </div>
+	<div class="search-bar">
+        <div class="soso">
+                <div class="input-content flex-cont flex-search">
+                    <img src="images/unbounded_icon_search.png" alt="">
+                    <div class="input">
+                        <input type="search" id="txtproductcode" placeholder="请扫描物料条码"/>
+                    </div>
+                </div>
+            </div>
+    </div>
+    <!--内容列表-->
+    <div class="goods-main">
+        <ul id="ullist"></ul>
+    </div>
+</div>
+<div class="footer flex-cont">
+    <div class="flx-2 cart">
+        <img src="images/cart.png" alt="">
+        <i class="cart-add-quantity">0</i>
+        <span class="prompt">您添加了<strong id="shopcardnum">0</strong>货品</span>
+    </div>
+    <div class="flx-1 carry">
+        <a href="javascript:void(0)" onclick="add()">确认组盘</a>
+    </div>
+</div>
+
+<div class="mask fadeIn animated" style="display: none"></div>
+<div class="pop-goods fadeInUpBig animated"  style="display: none;height: 200px;">
+    <div class="pop-goods-content">
+        <h3>入库数量管理</h3>
+        <ul>
+            <li class="flex-cont flex-search">
+                <div class="pop-goods-text flx-1">数量：</div>
+                <div class="pop-goods-jj flx-2">
+                    <span class="jian">-</span>
+                    <input class="num">
+                    <span class="jia">+</span>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div class="pop-footer">
+        <div class="flex-cont flex-search">
+            <a href="javascript:void(0)" class="cancel flx-1">取消</a>
+            <a href="javascript:void(0)" class="determine flx-1" onclick="cksure(this)">确定</a>
+        </div>
+    </div>
+</div>
+<script>
+    function eventDefault(e) {
+        e.preventDefault();
+    };
+    
+    $(".mask").on('click', function () {
+        $(".mask").hide();
+        $(".pop-goods").hide();
+
+        document.removeEventListener('touchmove',eventDefault,{ passive: true });
+    });
+    $(".jia").click(function(){
+        var a = $(this).prev().val();
+        a++;
+        $(this).prev().val(a);
+        // js();
+
+    });
+    $(".jian").click(function(){
+        var a = $(this).next().val();
+		if(parseInt(a)>=2){
+			a--;
+		}else{
+			a=1;
+		}
+        $(this).next().val(a);
+    });
+
+
+</script>
+</body>
+</html>
+ 
