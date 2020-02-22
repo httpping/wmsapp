@@ -35,10 +35,10 @@ public class WebViewActivity extends BaseBrowserActivity  {
                 .request(Manifest.permission.WRITE_EXTERNAL_STORAGE,Manifest.permission.MOUNT_UNMOUNT_FILESYSTEMS)
                 .subscribe(granted -> {
                     if (granted) { // Always true pre-M
-                        JsResponse result = FileOptions.getInstance(this).writeFile("abc.json","谭平最帅");
+                        JsResponse result = WxScanMsgOptions.getInstance(this).writeFile("abc.json","谭平最帅");
                         ToastUtil.showToast(this,result.code+"");
 
-                        result = FileOptions.getInstance(this).readFile("abc.json");
+                        result = WxScanMsgOptions.getInstance(this).readFile("abc.json");
                         ToastUtil.showToast(this,result.code+" :" + result.data);
                     } else {
                         // Oups permission denied
