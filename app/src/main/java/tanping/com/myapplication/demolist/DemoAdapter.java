@@ -42,7 +42,7 @@ import static tanping.com.myapplication.demolist.DemoAdapterEntity.TYPE_TWO;
 
 
 /**
- * 项目名称: YOSHOP
+ * 项目名称:
  * 类描述：
  * 创建人：Created by tanping
  * 创建时间:2018/7/25 14:15
