@@ -15,7 +15,7 @@ android {
             keyAlias rootProject.ext.keyAlias
             keyPassword rootProject.ext.keyPassword
             storeFile file("../wmsapp.jks")
-            storePassword  rootProject.ext.storePassword
+            storePassword rootProject.ext.storePassword
             v1SigningEnabled true
             v2SigningEnabled true
             flavorDimensions "tp"
@@ -53,11 +53,10 @@ android {
         }
     }
 
-
-    //修改生成的apk名字Zaful_v1.2.0_deploy_api2.0_1509051415.apk [appname]_[version_name]_[deploy|develop]_[date].apk
+    //修改生成的apk名字xx_v1.2.0_deploy_api2.0_1509051415.apk [appname]_[version_name]_[deploy|develop]_[date].apk
     android.applicationVariants.all { variant ->
         variant.outputs.all {
-             outputFileName = "app_${variant.buildType.name}.apk"
+            outputFileName = "app_${variant.buildType.name}.apk"
         }
     }
 
@@ -80,7 +79,7 @@ dependencies {
     implementation 'com.android.support:design:28.0.0'
     implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.36'
 
-     // 事件总线库
+    // 事件总线库
     implementation "org.greenrobot:eventbus:3.1.1"
     implementation 'gb.tp.utils:TPUtils:1.0.3'
     implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.36'
@@ -104,8 +103,8 @@ dependencies {
     implementation "io.reactivex.rxjava2:rxandroid:2.0.2"
     implementation "io.reactivex.rxjava2:rxjava:2.1.15"
 
-    implementation  'com.squareup.retrofit2:adapter-rxjava2:2.4.0'
-    implementation  'com.github.simonpercic:oklog3:2.1.0'
+    implementation 'com.squareup.retrofit2:adapter-rxjava2:2.4.0'
+    implementation 'com.github.simonpercic:oklog3:2.1.0'
 
     // 事件总线库
     implementation "org.greenrobot:eventbus:3.1.1"
